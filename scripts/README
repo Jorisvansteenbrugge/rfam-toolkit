@@ -1,0 +1,47 @@
+README
+------
+A collection of tools to assist non-coding RNA gene annotation in multiple 
+datasets(sequence databases(RNAcentral),Genomes) with Infernal v1.1.1 
+(http://infernal.janelia.org) and Rfam 12.0.
+
+Designed to support both local installation as well as utilizing IBM's LSF platform.
+   
+Requirements:
+------------
+
+1. python 2.7
+2. Infernal 1.1.1
+3. Rfam 12.0
+
+Files:
+-----
+1. rfam_scanner.py:  A tool designed to support Rfam scanning both locally 
+                     as well as utilizing IBM's LSF platform.
+
+
+rfam_scanner:
+HOWTO:
+-----
+
+1. Organize inputs (cm_dir,seq_dir,out_dir)
+   cm_dir:  A family directory containing the covariance models of preference
+   seq_dir: A directory containing a collection of fasta files (.fa) or a number 
+            of sub-directories of fasta (.fa) files. Use -m option for the 
+            sub_directories otherwise the code assumes it is a 
+   out_dir: The destination directory for the output
+   
+   -m   Work on multiple datasets (seq_dir in seq_dir/proj/seq.fa format)
+   
+2. Set CMSCAN_EXEC/CMSEARCH_EXEC to point to the correct directories 	 
+
+./rfam_scanner /path/to/cm_dir /path/to/seq_dir /path/to/out_dir [-m] 
+
+LSF Requirements:
+----------------
+
+1. Pre-generated job group
+2. Set the path to Infernal executables
+3. Set MEM, TMP_MEM, LSF = True, CPU ()
+
+
+
