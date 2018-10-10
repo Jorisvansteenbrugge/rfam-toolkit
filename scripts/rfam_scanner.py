@@ -282,7 +282,7 @@ if __name__ == '__main__':
         if (sys.argv[4] == '-m'):
             multi = True
     elif (len(sys.argv) == 2 and sys.argv[1] == "-h"):
-        print "Help currently unavailable"
+        print("Help currently unavailable")
         # rfam_scanner_help()
 
     batch_search(cm_dir, proj_dir, multi=multi, method=method, out_dir=out_dir)
